@@ -24,8 +24,8 @@
             <div class="img-holder">
                 <div class="bg"></div>
                 <div class="info-holder">
-                    <h3>Get more things done with Loggin platform.</h3>
-                    <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                    <h3 style="text-align: center">STRATEGIE & GOUVERNANCE AAEA</h3>
+                    <p>Retrouvez vos documents en en lieu sûr et en toute simplicité.</p>
                     <img src="{{ asset('assets/images/graphic5.svg') }}" alt="">
                 </div>
             </div>

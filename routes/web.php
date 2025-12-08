@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('voyager.login');
 });
 
 
@@ -37,8 +37,9 @@ Route::get('/home', function () {
     return app(\TCG\Voyager\Http\Controllers\VoyagerController::class)->index();
 })->name('home');
 
-Route::group(['prefix' => 'front','controller' => PageController::class], function () {
+Route::group(['prefix' => 'front', 'controller' => PageController::class], function () {
 
     Route::get('/', 'index')->name('front.index');
-
+    Route::get('/data', 'data')->name('front.data');
+    Route::get('/detail/{id}', 'detail')->name('front.detail');
 });
