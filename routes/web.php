@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Front\PageController;
+use App\Http\Controllers\GouvernanceController;
 use App\Http\Controllers\LoginFormController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +25,9 @@ Route::group(['prefix' => 'admin'], function () {
 
     Voyager::routes();
 
+    Route::post('/gouvernance/import', [GouvernanceController::class, 'import'])
+        ->name('gouvernance.import');
+
     Route::get('login', [LoginFormController::class, 'index'])->name('voyager.login');
 });
 
@@ -31,3 +36,9 @@ Auth::routes(['register' => false]);
 Route::get('/home', function () {
     return app(\TCG\Voyager\Http\Controllers\VoyagerController::class)->index();
 })->name('home');
+
+Route::group(['prefix' => 'front','controller' => PageController::class], function () {
+
+    Route::get('/', 'index')->name('front.index');
+
+});
