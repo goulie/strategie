@@ -42,4 +42,9 @@ Route::group(['prefix' => 'front', 'controller' => PageController::class], funct
     Route::get('/', 'index')->name('front.index');
     Route::get('/data', 'data')->name('front.data');
     Route::get('/detail/{id}', 'detail')->name('front.detail');
+
+    Route::post('/store', 'store')->name('front.store');
+    Route::get('/edit/{id}', 'edit')->name('front.edit');
+    Route::post('/update/{id}', 'update')->name('front.update');
+    Route::delete('/delete/{id}', 'delete')->name('front.delete');
 });

@@ -32,6 +32,36 @@
             </select>
         </div>
 
+        <div class="col-md-2">
+            <label>Regions</label>
+            <select id="filtre-region" class="form-control">
+                <option value="">Tous</option>
+                @foreach ($regions as $p)
+                    <option value="{{ $p->id }}">{{ $p->libelle }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label>Continents</label>
+            <select id="filtre-continent" class="form-control">
+                <option value="">Tous</option>
+                @foreach ($continents as $p)
+                    <option value="{{ $p->id }}">{{ $p->libelle }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label>Genre</label>
+            <select id="filtre-genre" class="form-control">
+                <option value="">Tous</option>
+                @foreach ($genres as $p)
+                    <option value="{{ $p->id }}">{{ $p->libelle_genre }}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="col-12 mt-2">
             <button type="reset" class="btn btn-secondary btn-sm" id="resetFilters">Réinitialiser</button>
         </div>
@@ -168,6 +198,9 @@
                     d.annee = $('#filtre-annee').val();
                     d.status = $('#filtre-status').val();
                     d.pays_id = $('#filtre-pays').val();
+                    d.region_id = $('#filtre-region').val();
+                    d.continent_id = $('#filtre-continent').val();
+                    d.genre_id = $('#filtre-genre').val();
                 }
             },
             columns: [{
@@ -200,7 +233,7 @@
         });
 
         // recharge le tableau quand un filtre change
-        $('#filtre-annee, #filtre-status, #filtre-pays').on('change', function() {
+        $('#filtre-annee, #filtre-status, #filtre-pays , #filtre-region,#filtre-continent,#filtre-genre').on('change', function() {
             table.ajax.reload();
         });
 
