@@ -183,17 +183,19 @@ return [
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'primary_color' => '#012cd1',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
-        'voyager/custom.css',
+        'voyager/custom.scss',
+        '/assets/custom/style.css'
     ],
 
     'additional_js' => [
-        //'js/custom.js',
+        'voyager/custom.js',
+        '/assets/custom/script.js'
     ],
 
     'googlemaps' => [

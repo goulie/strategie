@@ -16,7 +16,7 @@
             @include('voyager::partials.bulk-delete')
 
             <button class="btn btn-info" id="btnImport">
-                <i class="voyager-upload"></i> Importer un fichier Excel
+                <i class="voyager-upload"></i> I_mporter un fichier Excel
             </button>
         @endcan
         @can('edit', app($dataType->model_name))
@@ -45,6 +45,9 @@
 
 @section('content')
 
+    <button class="btn btn-info" onclick="document.getElementById('importModal').style.display='block'">
+        Importer
+    </button>
 
     <div class="page-content browse container-fluid">
         @include('voyager::alerts')
@@ -406,6 +409,8 @@
 @stop
 
 @section('javascript')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- DataTables -->
     @if (!$dataType->server_side && config('dashboard.data_tables.responsive'))
         <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
@@ -487,7 +492,6 @@
         });
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
         // OUVERTURE MODAL

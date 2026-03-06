@@ -41,4 +41,15 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeCurrentUser($query)
+    {
+        $user = auth()->user();
+        if ($user->role->name === 'Admin') {
+            return $query;
+        }
+
+        return $query->where('id', $user->id);
+    }
+    
 }

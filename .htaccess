@@ -1,0 +1,34 @@
+
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Bloquer l'accès aux fichiers .env
+    <Files .env>
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    # Bloquer l'accès aux fichiers de configuration Laravel
+    <FilesMatch "^\.env$|^config\.php|^database\.php">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+    # Bloquer l'accès au répertoire storage
+    RewriteRule ^/storage/ - [L,R=403]
+
+    # Bloquer l'accès à certaines autres routes sensibles
+    RewriteRule ^/admin - [L,R=403]
+
+    # Ajouter ici d'autres règles de blocage selon vos besoins
+
+    # Laisser passer toutes les autres requêtes
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php80” package as the default “PHP” programming language.

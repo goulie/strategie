@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\RhContrat;
+use App\Models\RhContratTerminaison;
+use App\Observers\RH\RhContratObserver;
+use App\Observers\RhContratTerminaisonObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        RhContratTerminaison::observe(RhContratTerminaisonObserver::class);
+        //RhContrat::observe(RhContratObserver::class);
     }
 }

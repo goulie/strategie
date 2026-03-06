@@ -1,0 +1,117 @@
+        /* Configuration de la police Inter (simulée avec font-family) */
+        body {
+            font-family: 'Inter', sans-serif, Helvetica, Arial;
+            background-color: #f7f9fc; /* Arrière-plan dashboard */
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* Style personnalisé pour les cartes (Panels Bootstrap 3) */
+        .kpi-panel {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px; /* Coins arrondis pour un look moderne */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            padding: 20px; /* Ajout d'un padding interne */
+        }
+
+        /* Effet de survol */
+        .kpi-panel:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.04);
+            cursor: pointer;
+        }
+
+        /* Style pour les grands chiffres */
+        .kpi-value {
+            font-size: 25px;
+            font-weight: 800; /* Extra gras */
+            color: #1f2937; /* Gris foncé */
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* En-tête de la métrique */
+        .kpi-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #6b7280; /* Gris moyen */
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        /* Style pour l'indicateur de tendance (la petite bulle d'icône) */
+        .trend-icon-circle {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white; /* Couleur de l'icône */
+        }
+
+        /* Couleurs pour les tendances */
+        .trend-up {
+            background-color: #106e01; /* Vert */
+            color: #d1fae5;
+        }
+        .trend-down {
+            background-color: #130489; /* Rouge */
+            color: #fee2e2;
+        }
+        .trend-neutral {
+            background-color: #175e02; /* Bleu */
+            color: #dbeafe;
+        }
+
+        /* Correction pour les pourcentages */
+        .trend-change-up {
+            color: #10b981; /* Vert */
+            font-weight: 600;
+        }
+        .trend-change-down {
+            color: #110475; /* Rouge */
+            font-weight: 600;
+        }
+        .trend-change-neutral {
+            color: #3b82f6; /* Bleu */
+            font-weight: 600;
+        }
+        
+        /* Ajustement du titre de la section */
+        .section-header h2 {
+            font-size: 12px;
+            color: #2563eb;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .section-header h1 {
+            font-size: 30px;
+            font-weight: 800;
+            margin-top: 5px;
+            color: #1f2937;
+        }
+
+                /* NOUVEAU: Style pour le conteneur du tableau */
+                .elegant-table-container {
+                    background-color: #ffffff;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                    padding: 20px;
+                    margin-top: 30px;
+                }
+                /* NOUVEAU: Style de l'en-tête du tableau */
+                .table > thead > tr > th {
+                    border-bottom: 2px solid #e0e0e0;
+                    color: #6b7280;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+                /* NOUVEAU: Amélioration de l'alternance des couleurs de lignes */
+                .table-striped > tbody > tr:nth-of-type(odd) {
+                    background-color: #fcfcfc;
+                }
